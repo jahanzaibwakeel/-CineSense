@@ -1,0 +1,1 @@
+"""CineSense provider ingestion pipeline."""

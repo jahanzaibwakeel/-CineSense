@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinesense-data-platform"
+version = "0.1.0"
+description = "Rights-aware, resumable CineSense catalog ingestion"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.28,<1",
+  "pydantic>=2.12,<3",
+  "psycopg[binary]>=3.2,<4",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=9.0,<10",
+  "testcontainers[postgres]>=4.15,<5",
+]
+
+[project.scripts]
+cinesense-data = "data_platform.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,0 +1,11 @@
+{
+  "name": "cinesense",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "dev": "npm run dev --workspace @cinesense/web",
+    "build": "npm run build --workspace @cinesense/web",
+    "lint": "npm run lint --workspace @cinesense/web"
+  }
+}
